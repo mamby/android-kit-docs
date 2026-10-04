@@ -38,10 +38,10 @@ script after its Android application plugin:
 apply(from = rootProject.file("gradle/validate-androidkit-resources.gradle"))
 ```
 
-Download the [0.1.53 validator]({{ '/downloads/0.1.53/validate-androidkit-resources.gradle' | relative_url }})
+Download the [{{ site.data.binary_releases.latest }} validator]({{ '/downloads/' | append: site.data.binary_releases.latest | append: '/validate-androidkit-resources.gradle' | relative_url }})
 and commit it as `gradle/validate-androidkit-resources.gradle` in the Android
-project. Its [SHA-256 checksum]({{ '/downloads/0.1.53/validate-androidkit-resources.gradle.sha256' | relative_url }})
-and the full [release manifest]({{ '/downloads/0.1.53/manifest.json' | relative_url }})
+project. Its [SHA-256 checksum]({{ '/downloads/' | append: site.data.binary_releases.latest | append: '/validate-androidkit-resources.gradle.sha256' | relative_url }})
+and the full [release manifest]({{ '/downloads/' | append: site.data.binary_releases.latest | append: '/manifest.json' | relative_url }})
 are available for verification. Keep the script matched to the Kit version;
 ordinary application builds use the committed copy without downloading scripts.
 

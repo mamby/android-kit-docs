@@ -28,8 +28,9 @@ python scripts/import_guides.py --source <path-to-android-kit>
 ```
 
 The importer includes only selected Markdown usage guides, never library source.
-Review imported examples and update `documentation_version` in `_config.yml` when
-preparing documentation for a different version.
+The Kit's `scripts/stage-docs-release.ps1` runs this importer automatically after
+staging and verifying the compiled packages. Review the imported examples and
+commit the packages and guides together. The site uses one release version.
 
 ## Maven distribution
 
@@ -49,8 +50,8 @@ Commit and push the imported packages. Pages verifies binary checksums and
 generates `_data/binary_releases.json` from the validated manifests before Jekyll
 builds. Installation examples, current download links and the release listing
 automatically follow the highest published version. For a local site build, run
-`python scripts/maven_release.py site-data` first. Release notes remain editorial;
-update `documentation_version` only after preparing matching guides.
+`python scripts/maven_release.py site-data` first. Import the matching guides with
+the packages; release notes remain editorial.
 Implementation source never belongs in this repository; the public validator is
 a companion host build script.
 

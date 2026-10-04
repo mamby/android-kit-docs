@@ -34,8 +34,7 @@ section: Start here
 
 ## Documentation and distribution
 
-The latest published binary release is **Android Kit {{ site.data.binary_releases.latest }}**.
-These guides describe **Android Kit {{ site.documentation_version }}**. Compiled
+These guides and compiled packages describe **Android Kit {{ site.data.binary_releases.latest }}**. Compiled
 artifacts are available from this site's Maven repository. The
 [installation guide]({{ '/installation/' | relative_url }}) explains the repository
 configuration; the [release page]({{ '/releases/' | relative_url }}) lists

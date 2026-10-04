@@ -1,6 +1,6 @@
 ---
 title: Releases
-description: Published binaries and the documentation version they correspond to.
+description: Published Android Kit releases and their companion downloads.
 permalink: /releases/
 section: Distribution
 ---
@@ -37,12 +37,11 @@ component behavior and public APIs are unchanged.
 
 No implementation sources or source JARs are published.
 
-## Documentation version
+## Guides
 
-The current documentation was prepared from the **{{ site.documentation_version }}**
-Kit release.
-Examples and migration notes describe that checkout; use documentation matching
-the binary version your application consumes.
+The current guides describe **Android Kit {{ site.data.binary_releases.latest }}**.
+Guides are imported from the same Kit checkout as the compiled packages during
+release staging.
 
 ## Release policy
 
