@@ -38,9 +38,12 @@ script after its Android application plugin:
 apply(from = rootProject.file("gradle/validate-androidkit-resources.gradle"))
 ```
 
-The public binary distribution and its companion validator are not available yet.
-Check the [release page]({{ '/releases/' | relative_url }}) for availability before
-attempting a new public integration.
+Download the [0.1.53 validator]({{ '/downloads/0.1.53/validate-androidkit-resources.gradle' | relative_url }})
+and commit it as `gradle/validate-androidkit-resources.gradle` in the Android
+project. Its [SHA-256 checksum]({{ '/downloads/0.1.53/validate-androidkit-resources.gradle.sha256' | relative_url }})
+and the full [release manifest]({{ '/downloads/0.1.53/manifest.json' | relative_url }})
+are available for verification. Keep the script matched to the Kit version;
+ordinary application builds use the committed copy without downloading scripts.
 
 The build gate checks application resource directories and resolved dependency
 AARs against the contract packaged in the Compose AAR. It rejects:

@@ -10,12 +10,11 @@ section: Distribution
 https://mamby.github.io/android-kit-docs/maven/
 ```
 
-**Binary publication is pending.** There are currently no Kit versions at this
-endpoint. Check [releases]({{ '/releases/' | relative_url }}) before configuring a
-version in an application.
+**Available version: 0.1.53.** Check [releases]({{ '/releases/' | relative_url }})
+for changes and companion downloads.
 
-The Maven repository will contain compiled AARs, POMs, Gradle module metadata and
-the BOM under the standard `net/mamby/androidkit/` directory layout. It will not
+The Maven repository contains compiled AARs, POMs, Gradle module metadata,
+checksums and the BOM under the standard `net/mamby/androidkit/` layout. It does not
 contain implementation source JARs.
 
 See [installation]({{ '/installation/' | relative_url }}) for the Gradle repository

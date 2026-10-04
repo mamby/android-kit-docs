@@ -6,16 +6,26 @@ section: Distribution
 ---
 ## Public binaries
 
-**No binary versions have been published to this repository yet.**
+### 0.1.53 — 4 October 2026
 
-This page will list each available version and its changes after its compiled
-artifacts have been published and verified at the
-[Maven endpoint]({{ '/maven/' | relative_url }}).
+First public binary distribution through the [Maven endpoint]({{ '/maven/' | relative_url }}).
+This packages the existing `0.1.53-SNAPSHOT` implementation as a fixed version;
+component behavior and public APIs are unchanged.
 
-## Documentation snapshot
+- Four library AARs: `foundation`, `localization`, `compose` and `navigation3`.
+- BOM, POM dependencies, Gradle module metadata and artifact checksums.
+- [Resource validator]({{ '/downloads/0.1.53/validate-androidkit-resources.gradle' | relative_url }})
+  and [validator SHA-256]({{ '/downloads/0.1.53/validate-androidkit-resources.gradle.sha256' | relative_url }}).
+- [MIT license]({{ '/downloads/0.1.53/LICENSE.txt' | relative_url }}) and
+  [third-party notices]({{ '/downloads/0.1.53/THIRD_PARTY_NOTICES.txt' | relative_url }}).
+- [Release manifest with file checksums]({{ '/downloads/0.1.53/manifest.json' | relative_url }}).
+
+No implementation sources or source JARs are published.
+
+## Documentation version
 
 The current documentation was prepared from the **{{ site.documentation_version }}**
-Kit checkout. This is a development snapshot, not an available public release.
+Kit release.
 Examples and migration notes describe that checkout; use documentation matching
 the binary version your application consumes.
 

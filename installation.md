@@ -5,9 +5,8 @@ permalink: /installation/
 section: Start here
 ---
 <div class="callout" markdown="1">
-**Binary publication is pending.** This site currently provides documentation.
-The Maven endpoint has no Kit releases yet, so the configuration below will work
-once a version is listed on the [release page]({{ '/releases/' | relative_url }}).
+**Android Kit 0.1.53 is available.** Download compiled artifacts from the public
+Maven repository below. No private repository access or credentials are required.
 </div>
 
 ## Requirements
@@ -15,7 +14,7 @@ once a version is listed on the [release page]({{ '/releases/' | relative_url }}
 - An Android application using Kotlin and Jetpack Compose.
 - Android 8.0 (API 26) or newer at runtime.
 - A toolchain compatible with the Kit version you choose. The documentation
-  snapshot was built against Android API 37.
+  release was built against Android API 37 with Java 21 bytecode.
 
 ## Add the repository
 
@@ -46,7 +45,13 @@ machine; contributors and GitHub Actions do not have that machine's local cache.
 ## Select a version and modules
 
 Set `androidKitVersion` in your project's `gradle.properties` to an exact version
-listed on the [release page]({{ '/releases/' | relative_url }}). Add the BOM and
+listed on the [release page]({{ '/releases/' | relative_url }}):
+
+```properties
+androidKitVersion=0.1.53
+```
+
+Add the BOM and
 the modules you use to your application's `build.gradle.kts`:
 
 ```kotlin
@@ -75,6 +80,9 @@ declare their supported locales. See [localization]({{ site.baseurl }}{% link gu
 ## Include the license
 
 Retain the MIT copyright and permission notice when redistributing Kit, including
-inside an application. Preserve applicable third-party notices as well. The
+inside an application. Preserve applicable third-party notices as well. Copy the
+release's [license]({{ '/downloads/0.1.53/LICENSE.txt' | relative_url }}) and
+[third-party notices]({{ '/downloads/0.1.53/THIRD_PARTY_NOTICES.txt' | relative_url }})
+into `app/src/main/assets/androidkit/` so they are included in the APK. The
 private implementation repository is not needed to download or use a published
 binary. See [license and notices]({{ '/license/' | relative_url }}).

@@ -34,11 +34,11 @@ section: Start here
 
 ## Documentation and distribution
 
-These guides describe the **{{ site.documentation_version }}** development snapshot.
-Public binary releases have not been published to this repository yet. The
+These guides describe **Android Kit {{ site.documentation_version }}**. Compiled
+artifacts are available from this site's Maven repository. The
 [installation guide]({{ '/installation/' | relative_url }}) explains the repository
-configuration; the [release page]({{ '/releases/' | relative_url }}) will list
-downloadable versions as they become available.
+configuration; the [release page]({{ '/releases/' | relative_url }}) lists
+published versions and their companion downloads.
 
 Android Kit's implementation repository is maintained privately. Its distributed
 binaries, documentation and examples remain MIT licensed. See the

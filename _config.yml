@@ -3,7 +3,7 @@ description: Opinionated Android foundations and Jetpack Compose components.
 url: https://mamby.github.io
 baseurl: /android-kit-docs
 repository: mamby/android-kit-docs
-documentation_version: 0.1.53-SNAPSHOT
+documentation_version: 0.1.53
 markdown: kramdown
 highlighter: rouge
 kramdown:
