@@ -88,7 +88,7 @@ Selection continues to use Compose radio-group semantics.
 ## Global search
 
 `AndroidKitSettingsSearchPage` searches every catalog page, including pages that
-have not been opened. It uses the shared [search page]({% link guides/search-page.md %}) implementation
+have not been opened. It uses the shared [search page]({{ site.baseurl }}{% link guides/search-page.md %}) implementation
 for the floating field, recent searches, empty states, scrolling and managed
 clearance. Opening the page focuses its input and requests the software keyboard.
 The Settings adapter owns catalog indexing and result controls;
@@ -180,4 +180,4 @@ Existing enabled `"settings"` queries remain unchanged. Previously hidden histor
 are migrated to disabled and cleared before loading. Former separate
 About history is left in storage and is not displayed or merged into Settings;
 this avoids revealing previously hidden subpage queries. General SearchPage
-history preferences use the enabled policy described in [SearchPage]({% link guides/search-page.md %}).
+history preferences use the enabled policy described in [SearchPage]({{ site.baseurl }}{% link guides/search-page.md %}).

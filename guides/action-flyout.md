@@ -9,7 +9,7 @@ toolbar and action-bar flyouts, header actions, cards, and navigation overflow.
 Place it in a `Box` with the control it should anchor to, inside `AndroidKitTheme`.
 
 For touch-and-hold or right-click actions positioned at the pointer, use
-[`AndroidKitContextMenu`]({% link guides/context-menu.md %}), which shares this menu renderer.
+[`AndroidKitContextMenu`]({{ site.baseurl }}{% link guides/context-menu.md %}), which shares this menu renderer.
 
 ```kotlin
 var expanded by remember { mutableStateOf(false) }
@@ -92,4 +92,4 @@ Use named arguments when migrating the old positional `offset` overload.
 Toolbar and action-bar callers continue to use their existing `flyout { ... }`
 DSL. Their actions and separators now render through the same standalone flyout.
 
-Appearance is configured through the supported color-only `colors` input. See [themes]({% link guides/theme.md %}).
+Appearance is configured through the supported color-only `colors` input. See [themes]({{ site.baseurl }}{% link guides/theme.md %}).

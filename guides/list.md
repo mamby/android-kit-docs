@@ -114,4 +114,4 @@ localized selected-count description. The leading gutter follows layout directio
 
 The demo catalog includes one interactive List showcase with List/Grid switching,
 host-triggered selection, menu and swipe deletion, confirmation and bulk actions.
-See [component ownership]({% link guides/component-contract.md %}).
+See [component ownership]({{ site.baseurl }}{% link guides/component-contract.md %}).

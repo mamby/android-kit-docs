@@ -31,7 +31,7 @@ def convert_links(match):
     anchor = match.group(2) or ""
     if name not in known:
         raise ValueError(f"Unpublished documentation link: {name}.md")
-    return "({% link guides/" + name + ".md %}" + anchor + ")"
+    return "({{ site.baseurl }}{% link guides/" + name + ".md %}" + anchor + ")"
 
 
 for name, (title, description, section) in GUIDES.items():

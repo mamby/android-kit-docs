@@ -65,5 +65,5 @@ pickers. Android resource directories use their legacy qualifiers `in`, `iw` and
 Kit controls respond to the host application's locale configuration. Application
 content still needs its own translated resources. Settings owns one shared search
 scope; independent content searches own their page-specific histories. See
-[Settings]({% link guides/settings.md %}) and
-[search pages]({% link guides/search-page.md %}).
+[Settings]({{ site.baseurl }}{% link guides/settings.md %}) and
+[search pages]({{ site.baseurl }}{% link guides/search-page.md %}).

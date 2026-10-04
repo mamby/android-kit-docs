@@ -66,11 +66,11 @@ for each artifact's responsibility.
 
 Place Kit's Compose components beneath `AndroidKitTheme`. Configure the palette
 through `AndroidKitThemeDefinition`; keep typography, geometry and shared control
-rendering Kit-owned. Start with [themes]({% link guides/theme.md %}) and the
-[component contract]({% link guides/component-contract.md %}).
+rendering Kit-owned. Start with [themes]({{ site.baseurl }}{% link guides/theme.md %}) and the
+[component contract]({{ site.baseurl }}{% link guides/component-contract.md %}).
 
 Consuming applications must also apply the resource validation build gate and
-declare their supported locales. See [localization]({% link guides/localization.md %}).
+declare their supported locales. See [localization]({{ site.baseurl }}{% link guides/localization.md %}).
 
 ## Include the license
 

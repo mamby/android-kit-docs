@@ -20,14 +20,14 @@ The `compose` module supplies Kit's shared controls and page presentation. Hosts
 provide typed data, state and callbacks, plus application-owned content inside
 supported page, card, sheet and navigation body slots.
 
-Use the [component contract]({% link guides/component-contract.md %}) to understand
+Use the [component contract]({{ site.baseurl }}{% link guides/component-contract.md %}) to understand
 the ownership boundary, then choose guides from the documentation menu.
 
 ## Navigation
 
 Use `navigation3` when your application needs Kit's Navigation 3 state or
 `AndroidKitNavDisplay`. The host still owns routes, destinations and navigation
-decisions. Read [navigation]({% link guides/navigation.md %}).
+decisions. Read [navigation]({{ site.baseurl }}{% link guides/navigation.md %}).
 
 ## Distribution
 

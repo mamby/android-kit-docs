@@ -17,7 +17,7 @@ behavior of its components.
 - Application body content in page, card, sheet and navigation body slots.
 
 Public component APIs do not expose arbitrary rendering slots for headers,
-controls, menus, settings rows or badges. See [themes]({% link guides/theme.md %})
+controls, menus, settings rows or badges. See [themes]({{ site.baseurl }}{% link guides/theme.md %})
 for the color-only appearance contract.
 
 ## Application-owned content
@@ -32,24 +32,24 @@ measured chrome and system insets.
 
 ## Typed controls and actions
 
-Use [section cards]({% link guides/section-card.md %}) for typed rows and controls.
-Declare menu entries through the [action flyout]({% link guides/action-flyout.md %})
+Use [section cards]({{ site.baseurl }}{% link guides/section-card.md %}) for typed rows and controls.
+Declare menu entries through the [action flyout]({{ site.baseurl }}{% link guides/action-flyout.md %})
 DSL; Kit renders their icons, text, spacing and dismissal behavior.
 
-[Lists]({% link guides/list.md %}) accept application-owned item bodies while Kit
+[Lists]({{ site.baseurl }}{% link guides/list.md %}) accept application-owned item bodies while Kit
 owns item interaction, menus, selection and supported swipe actions.
 
 ## Settings and history
 
-Declare one complete [Settings catalog]({% link guides/settings.md %}) in an owner
+Declare one complete [Settings catalog]({{ site.baseurl }}{% link guides/settings.md %}) in an owner
 above Settings navigation. Main, About and subpages share its catalog, persistent
 values, search history and privacy state.
 
-Independent [content searches]({% link guides/search-page.md %}) keep a separate
+Independent [content searches]({{ site.baseurl }}{% link guides/search-page.md %}) keep a separate
 history and privacy scope for each logical page.
 
 ## Shared vocabulary
 
 Kit owns predefined control wording and translations. Your application owns
 content labels, custom action labels, option values and domain messages.
-Consumers must apply the [localization build gate]({% link guides/localization.md %}).
+Consumers must apply the [localization build gate]({{ site.baseurl }}{% link guides/localization.md %}).

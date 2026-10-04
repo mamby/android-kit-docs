@@ -40,7 +40,7 @@ and the destination. Only opt appropriate pages in. There is no payment provider
 analytics, automatic scheduling, or persistent policy inside Kit.
 
 Kit owns the wording and translations in its private androidkit_compose_support_prompt_*
-resources. Kit supplies the languages listed in [localization]({% link guides/localization.md %}). Hosts cannot override the
+resources. Kit supplies the languages listed in [localization]({{ site.baseurl }}{% link guides/localization.md %}). Hosts cannot override the
 translations; new languages must be added to Kit first. There are no per-prompt
 text or rendering slots. `supportCardColors` configures supported card colors; Kit owns the sheet's presentation.
 

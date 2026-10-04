@@ -69,7 +69,7 @@ Use Compose's `androidx.compose.foundation.lazy.items` extension in the result
 slot. The page supplies its lazy list and content padding; do not nest another
 vertical scroller or add IME padding. Supply `listState` when the host needs to
 control scrolling. `voiceInputEnabled = false` omits the microphone; dictation
-uses the existing [floating search contract]({% link guides/floating-search.md %}).
+uses the existing [floating search contract]({{ site.baseurl }}{% link guides/floating-search.md %}).
 
 ## Matching and result actions
 
@@ -165,4 +165,4 @@ Settings pages cannot supply a separate catalog or history.
 The Settings adapter supplies catalog results and renders their original
 controls through the result slot, retaining the Search settings title, Settings
 empty message, multilingual lexicon, section context, and in-place pickers,
-switches, sliders, links, and copy actions. See [Settings]({% link guides/settings.md %}).
+switches, sliders, links, and copy actions. See [Settings]({{ site.baseurl }}{% link guides/settings.md %}).
