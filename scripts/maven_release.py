@@ -83,7 +83,7 @@ def import_release(args):
     for module in MODULES:
         source = args.source / "net/mamby/androidkit" / module / args.version
         for path in source.iterdir():
-            if path.suffix in (".md5", ".sha1", ".sha256", ".sha512", ".asc"):
+            if path.suffix in (".md5", ".sha1", ".sha256", ".sha512"):
                 continue
             files[PREFIX / module / args.version / path.name] = path.read_bytes()
     validate(files, args.version)
