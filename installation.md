@@ -5,7 +5,7 @@ permalink: /installation/
 section: Start here
 ---
 <div class="callout" markdown="1">
-**Android Kit 0.1.53 is available.** Download compiled artifacts from the public
+**Android Kit {{ site.data.binary_releases.latest }} is available.** Download compiled artifacts from the public
 Maven repository below. No private repository access or credentials are required.
 </div>
 
@@ -48,7 +48,7 @@ Set `androidKitVersion` in your project's `gradle.properties` to an exact versio
 listed on the [release page]({{ '/releases/' | relative_url }}):
 
 ```properties
-androidKitVersion=0.1.53
+androidKitVersion={{ site.data.binary_releases.latest }}
 ```
 
 Add the BOM and
@@ -81,8 +81,8 @@ declare their supported locales. See [localization]({{ site.baseurl }}{% link gu
 
 Retain the MIT copyright and permission notice when redistributing Kit, including
 inside an application. Preserve applicable third-party notices as well. Copy the
-release's [license]({{ '/downloads/0.1.53/LICENSE.txt' | relative_url }}) and
-[third-party notices]({{ '/downloads/0.1.53/THIRD_PARTY_NOTICES.txt' | relative_url }})
+release's [license]({{ '/downloads/' | append: site.data.binary_releases.latest | append: '/LICENSE.txt' | relative_url }}) and
+[third-party notices]({{ '/downloads/' | append: site.data.binary_releases.latest | append: '/THIRD_PARTY_NOTICES.txt' | relative_url }})
 into `app/src/main/assets/androidkit/` so they are included in the APK. The
 private implementation repository is not needed to download or use a published
 binary. See [license and notices]({{ '/license/' | relative_url }}).

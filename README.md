@@ -8,7 +8,7 @@ The implementation is maintained in a separate private repository. This
 repository contains documentation, usage examples, the MIT license, third-party
 notices and the public Maven directory for compiled releases.
 
-Android Kit `0.1.53` is published; see the site's release page for availability.
+See the site's release page for published versions and availability.
 
 ## Publishing the site
 
@@ -45,8 +45,12 @@ python scripts/maven_release.py check
 The importer validates POMs, Gradle metadata and binary archives, refuses source
 JARs and refuses to overwrite any versioned file with different contents. It
 preserves earlier versions and generates checksums and a release manifest.
-Update the release page, installation version and documentation version, then
-commit and push. Pages verifies binary checksums before and after Jekyll builds.
+Commit and push the imported packages. Pages verifies binary checksums and
+generates `_data/binary_releases.json` from the validated manifests before Jekyll
+builds. Installation examples, current download links and the release listing
+automatically follow the highest published version. For a local site build, run
+`python scripts/maven_release.py site-data` first. Release notes remain editorial;
+update `documentation_version` only after preparing matching guides.
 Implementation source never belongs in this repository; the public validator is
 a companion host build script.
 

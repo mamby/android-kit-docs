@@ -126,8 +126,12 @@ def check_release(root):
     manifests = list((root / "downloads").glob("*/manifest.json"))
     if not manifests:
         raise ValueError("No release manifests found")
+    versions = []
     for manifest_path in manifests:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        version = manifest["version"]
+        if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", version) or manifest_path.parent.name != version:
+            raise ValueError(f"Invalid release version: {manifest_path}")
         files = {}
         for item in manifest["files"]:
             path = Path(item["path"])
@@ -140,10 +144,21 @@ def check_release(root):
             if path.suffix in (".pom", ".module", ".aar"):
                 files[path] = data
         validate(files, manifest["version"])
+        versions.append(version)
     for path in (root / "maven").rglob("*"):
         if path.is_file() and ("sources" in path.name.lower() or path.suffix in (".java", ".kt", ".kts")):
             raise ValueError(f"Unexpected source file in Maven repository: {path}")
     print(f"Verified {len(manifests)} binary releases and their file checksums.")
+    return sorted(versions, key=lambda version: tuple(map(int, version.split("."))), reverse=True)
+
+
+def generate_site_data(root):
+    versions = check_release(root)
+    data = {"latest": versions[0], "versions": versions}
+    target = root / "_data/binary_releases.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8", newline="\n")
+    print(f"Generated site release data: latest {versions[0]}.")
 
 
 if __name__ == "__main__":
@@ -157,8 +172,12 @@ if __name__ == "__main__":
     importer.add_argument("--notices", type=Path, required=True)
     checker = commands.add_parser("check")
     checker.add_argument("--root", type=Path, default=ROOT)
+    site_data = commands.add_parser("site-data", help="Verify releases and generate Jekyll version data")
+    site_data.add_argument("--root", type=Path, default=ROOT)
     arguments = parser.parse_args()
     if arguments.command == "import":
         import_release(arguments)
+    elif arguments.command == "site-data":
+        generate_site_data(arguments.root)
     else:
         check_release(arguments.root)

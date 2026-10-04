@@ -56,7 +56,7 @@
       {% endunless %}
       <article class="content{% if page.home %} home-content{% endif %}">{{ content }}</article>
       <footer class="page-footer">
-        <span>Android Kit · Documentation {{ site.documentation_version | escape }}</span>
+        <span>Android Kit {{ site.data.binary_releases.latest | escape }} · Documentation {{ site.documentation_version | escape }}</span>
         <a href="{{ '/license/' | relative_url }}">License &amp; notices</a>
       </footer>
     </main>
