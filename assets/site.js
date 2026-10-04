@@ -90,7 +90,7 @@
     }
   });
   results.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { ++revision; close(); input.focus(); }
+    if (event.key === 'Escape') { input.focus(); ++revision; close(); }
   });
   document.addEventListener('click', event => {
     if (!event.target.closest('.search')) { ++revision; close(); }
