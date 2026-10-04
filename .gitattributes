@@ -1,3 +1,5 @@
 * text=auto eol=lf
 *.aar binary
 *.jar binary
+maven/net/** -text
+downloads/** -text
