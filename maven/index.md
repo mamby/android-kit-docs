@@ -1,0 +1,23 @@
+---
+title: Maven repository
+description: Public endpoint for compiled Android Kit artifacts.
+permalink: /maven/
+section: Distribution
+---
+## Endpoint
+
+```text
+https://mamby.github.io/android-kit-docs/maven/
+```
+
+**Binary publication is pending.** There are currently no Kit versions at this
+endpoint. Check [releases]({{ '/releases/' | relative_url }}) before configuring a
+version in an application.
+
+The Maven repository will contain compiled AARs, POMs, Gradle module metadata and
+the BOM under the standard `net/mamby/androidkit/` directory layout. It will not
+contain implementation source JARs.
+
+See [installation]({{ '/installation/' | relative_url }}) for the Gradle repository
+configuration. Google Maven and Maven Central remain separate sources for Kit's
+third-party dependencies.

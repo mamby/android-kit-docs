@@ -1,0 +1,48 @@
+- title: Start here
+  pages:
+    - title: Overview
+      url: /
+    - title: Installation
+      url: /installation/
+    - title: Modules
+      url: /modules/
+    - title: Component ownership
+      url: /guides/component-contract/
+- title: Foundations
+  pages:
+    - title: Themes and colors
+      url: /guides/theme/
+    - title: Localization
+      url: /guides/localization/
+    - title: Navigation
+      url: /guides/navigation/
+- title: Components
+  pages:
+    - title: Lists and selection
+      url: /guides/list/
+    - title: Section cards
+      url: /guides/section-card/
+    - title: Settings
+      url: /guides/settings/
+    - title: Search pages
+      url: /guides/search-page/
+    - title: Floating search
+      url: /guides/floating-search/
+    - title: Action flyouts
+      url: /guides/action-flyout/
+    - title: Context menus
+      url: /guides/context-menu/
+    - title: Tooltips
+      url: /guides/floating-tooltip/
+    - title: Lock pages
+      url: /guides/lock-page/
+    - title: Support prompts
+      url: /guides/support-prompt/
+- title: Distribution
+  pages:
+    - title: Releases
+      url: /releases/
+    - title: Maven repository
+      url: /maven/
+    - title: License and notices
+      url: /license/

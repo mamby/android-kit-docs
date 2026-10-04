@@ -1,0 +1,22 @@
+title: Android Kit
+description: Opinionated Android foundations and Jetpack Compose components.
+url: https://mamby.github.io
+baseurl: /android-kit-docs
+repository: mamby/android-kit-docs
+documentation_version: 0.1.53-SNAPSHOT
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+exclude:
+  - README.md
+  - scripts
+  - .github
+  - Gemfile
+  - Gemfile.lock
