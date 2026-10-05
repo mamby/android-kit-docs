@@ -1,0 +1,92 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.mamby.androidkit",
+    "module": "bom",
+    "version": "0.1.59",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "platform",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencyConstraints": [
+        {
+          "group": "net.mamby.androidkit",
+          "module": "foundation",
+          "version": {
+            "requires": "0.1.59"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "localization",
+          "version": {
+            "requires": "0.1.59"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "compose",
+          "version": {
+            "requires": "0.1.59"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "navigation3",
+          "version": {
+            "requires": "0.1.59"
+          }
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "platform",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencyConstraints": [
+        {
+          "group": "net.mamby.androidkit",
+          "module": "foundation",
+          "version": {
+            "requires": "0.1.59"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "localization",
+          "version": {
+            "requires": "0.1.59"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "compose",
+          "version": {
+            "requires": "0.1.59"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "navigation3",
+          "version": {
+            "requires": "0.1.59"
+          }
+        }
+      ]
+    }
+  ]
+}
