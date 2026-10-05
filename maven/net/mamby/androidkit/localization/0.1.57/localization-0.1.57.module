@@ -1,0 +1,97 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.mamby.androidkit",
+    "module": "localization",
+    "version": "0.1.57",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "net.mamby.androidkit",
+          "module": "foundation",
+          "version": {
+            "requires": "0.1.57"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "localization-0.1.57.aar",
+          "url": "localization-0.1.57.aar",
+          "size": 29075,
+          "sha512": "0d42254f16734dcf19eea7750d144b1b3ccb680e9f42e9aa72ab64817717b8307541ae31141690f4343d53b9111e815e8117d20178d1d9ccf71a0ccb0dbd95a2",
+          "sha256": "cd248c3beadbb95ee2c68d7e6035376f6cc6ba1e1f89d80c768db0042c26eac5",
+          "sha1": "6c830206e3e71d91c48c34ce163efc33f0872a4b",
+          "md5": "ee20ec4c35db4eb3bc263ac56a6a7084"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "foundation",
+          "version": {
+            "requires": "0.1.57"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "localization-0.1.57.aar",
+          "url": "localization-0.1.57.aar",
+          "size": 29075,
+          "sha512": "0d42254f16734dcf19eea7750d144b1b3ccb680e9f42e9aa72ab64817717b8307541ae31141690f4343d53b9111e815e8117d20178d1d9ccf71a0ccb0dbd95a2",
+          "sha256": "cd248c3beadbb95ee2c68d7e6035376f6cc6ba1e1f89d80c768db0042c26eac5",
+          "sha1": "6c830206e3e71d91c48c34ce163efc33f0872a4b",
+          "md5": "ee20ec4c35db4eb3bc263ac56a6a7084"
+        }
+      ]
+    }
+  ]
+}

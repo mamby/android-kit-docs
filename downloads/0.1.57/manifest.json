@@ -1,0 +1,386 @@
+{
+  "version": "0.1.57",
+  "group": "net.mamby.androidkit",
+  "files": [
+    {
+      "path": "downloads/0.1.57/LICENSE.txt",
+      "sha256": "457906cc2cfe13e42335a5f3e3c40c88abb79e157099139b7360aa6ae88ea1e0",
+      "size": 1090
+    },
+    {
+      "path": "downloads/0.1.57/LICENSE.txt.sha256",
+      "sha256": "55140143cf59eefb2f26c82308ac3e6663bf8247e29a4c19e5ba71f920d94c96",
+      "size": 65
+    },
+    {
+      "path": "downloads/0.1.57/THIRD_PARTY_NOTICES.txt",
+      "sha256": "7eaa98bc5072abd6743cfa4a63d2133978bb77cfbd147ffeeaf986ab55dc440c",
+      "size": 2102
+    },
+    {
+      "path": "downloads/0.1.57/THIRD_PARTY_NOTICES.txt.sha256",
+      "sha256": "9d2917281b279485afe95fa27e1ad44e80709dc8f994538d6022468236abd91f",
+      "size": 65
+    },
+    {
+      "path": "downloads/0.1.57/validate-androidkit-resources.gradle",
+      "sha256": "5f85a33c97812043f33607e993342d0d5b25c23b0f0e3fa3a28b09b5e2e8c82b",
+      "size": 14041
+    },
+    {
+      "path": "downloads/0.1.57/validate-androidkit-resources.gradle.sha256",
+      "sha256": "8039d781a9d5608de1ec1ed33f51954d59b8a443b5180e18161c5a9db480ca5b",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.module",
+      "sha256": "4a4cdbca6a82544e1f1d9755068ac1ac9d6ea2445c3014c840d29ac0015f44f3",
+      "size": 2012
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.module.md5",
+      "sha256": "b7687ecce59daa873cd62a6bb3a12be335617bdb1f284acde13d1f7c50de969a",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.module.sha1",
+      "sha256": "1eb9dce9d07c4ddea8ebfdab17864b37e1d56fea04f086c13be12616fe889bcd",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.module.sha256",
+      "sha256": "2ad02cf4e28bdade6650109e6a1089345b4729ae6139fb20940f99364a03431c",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.module.sha512",
+      "sha256": "7c9f702399a9a0d8bb9246966af6459410f0d970b29644c747a19dc1489d4060",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.pom",
+      "sha256": "a6551f54126651f4bb54ffcb5568b2f57e66da2420022d40f4e64c2e8e113f37",
+      "size": 2048
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.pom.md5",
+      "sha256": "566a7801d3db8fccdd6a65bb2e73f9a05660e7cc8e83abf59e2d2bec3e145ec4",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.pom.sha1",
+      "sha256": "9da15783f55579b3de620f4f1f37ed26f0367bab85af588117833cfd92f02dcf",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.pom.sha256",
+      "sha256": "2108e4100f83bbe8335eb73f1958f189ea60e6110b9200fffde74434bf5d4e61",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/bom/0.1.57/bom-0.1.57.pom.sha512",
+      "sha256": "f04b070af24e409603820d2c1bf4d0cfe8e3b29b57d47c9562e6889bb6999de2",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.aar",
+      "sha256": "4dba3f8f8e8dfc300f1e876d06e8b46764ed305e124879a78febb9bd1caa63fe",
+      "size": 1431398
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.aar.md5",
+      "sha256": "b777e68c3f9e09ad1edc9c6f55a81bade151a18aac3693d0dedc0ebdc46dbd55",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.aar.sha1",
+      "sha256": "c4cce7a34d572d7dbf0b67ad8c1f5978c5a54a1bba086aa99e32c4ea33fe7f9a",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.aar.sha256",
+      "sha256": "3e638ed334c54de4ddc8449a0e0fe247c9a5178b08741bb207ae9a56d40ee396",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.aar.sha512",
+      "sha256": "561ecb64e379c1c4fd96ba76e872791095e17b448e4ad0165b9145f0d637369d",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.module",
+      "sha256": "97f83b5b3b14e9519416b168edfee16b1ad20327e786a0bf5d1d32e009655caf",
+      "size": 4984
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.module.md5",
+      "sha256": "efacd395246d7c1ed2a9394500947ce38a74cfabaae6f254ecbe8065736b28ca",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.module.sha1",
+      "sha256": "f19a11cb5d5da7e0567e77549fe41d4440ebb94a375bdfd0f9ff427745d1f39c",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.module.sha256",
+      "sha256": "188c47edebc78dfe2d5cf54d16d20b02748296ee10f419e5614b61173e749c2b",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.module.sha512",
+      "sha256": "f1649339cfa60373ee922a47e3ac828e99c1f2783266b177545489c6e26ac147",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.pom",
+      "sha256": "5dc38c2ee8d939d1ea0f4e6270b1931c126116ec4f1179a4d251610ea07bcc0e",
+      "size": 3749
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.pom.md5",
+      "sha256": "9958bced0a662eda14fcab4cbcc28bef18a4545d21812586a8145f6281b22594",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.pom.sha1",
+      "sha256": "302f040e5837848fff0b5ad397c208a6735e17f8ef5192ffd3c4a4f448048ef1",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.pom.sha256",
+      "sha256": "db4acb31e7e743b733abd2cf60b76471f3531d8aae8c556351ebaf606bc73eaa",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/compose/0.1.57/compose-0.1.57.pom.sha512",
+      "sha256": "7dccdff11af47a7cf7b39a0c8413429c40c9f174614e650892f061ab2927c77f",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.aar",
+      "sha256": "4605eb870cf8c65d8b438791aa0cc1b641df30377b6df951ac084e5f28814a23",
+      "size": 4476
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.aar.md5",
+      "sha256": "539719a0d17d1c0ac5a6f75faa8e2aa1ebf13242dc4f8981f9fe33aa39b1075c",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.aar.sha1",
+      "sha256": "bfe655a0e6eb3560f295bb7423e3dd8e6455fc5831740a3e0b7957ba38062225",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.aar.sha256",
+      "sha256": "892a04ccc220a93cf76767e7d0055b60a5aac42aaa1cf66dc7630c9343722d3e",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.aar.sha512",
+      "sha256": "646c2a19bd03ac83b4ff6739e1d32ef0570a0c0e0fc0382e364df44be97285e5",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.module",
+      "sha256": "d0c5b374500f275ed54fca85187ed8558d7211d5759ac1d46ec37787ea2e2a45",
+      "size": 2273
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.module.md5",
+      "sha256": "9aa26999eef562e83a64bfc9e5e3fb66d2292c17eee502d252a61975503522b3",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.module.sha1",
+      "sha256": "71211a2d6b2fe9834294e57b03941a22ab5999395f41f0313f5947c01b7a4c8f",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.module.sha256",
+      "sha256": "f8471aad91cd90b3f23053b16f3635cc2a6ba6294d9e8a8c41318b0168525ae6",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.module.sha512",
+      "sha256": "ba6ba80790f6dff052f9a6f3f55498d5bdb72637552c445d2a79531d734d91d8",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.pom",
+      "sha256": "31f6846dd4df040028ebabd8e3f416ce2f7c4adf1b2e6b8e880f115432ffe0b9",
+      "size": 1538
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.pom.md5",
+      "sha256": "bb99681eeee853dc6edb390e75085fcd99d43988c342fef0cf65e16ce9951575",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.pom.sha1",
+      "sha256": "7f303cdf73f0002d0be60f6270618f320e272da8cd49d81abb30d45cf48047f8",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.pom.sha256",
+      "sha256": "7fd0064f82292b2fbacae875852c45868761dc21b6fdc4cb2608998e2f0f6791",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/foundation/0.1.57/foundation-0.1.57.pom.sha512",
+      "sha256": "f845f1b5be78d09c1992a9292c38c508ac7a1506c16933776c3f170addc7a6d2",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.aar",
+      "sha256": "cd248c3beadbb95ee2c68d7e6035376f6cc6ba1e1f89d80c768db0042c26eac5",
+      "size": 29075
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.aar.md5",
+      "sha256": "7ba974713cd4e57a2285ad23084a0df3b3708c29d6b59b50b2191cf39cbfac40",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.aar.sha1",
+      "sha256": "5e9052a74cb9b751615c31ae7e58dc77d7c987d181bd280bc5c7f9117c54f746",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.aar.sha256",
+      "sha256": "d1efe48c5ee0a859bab45673abd3821a8136a3628071a50acb654350aac64da9",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.aar.sha512",
+      "sha256": "5ea0704a5a5101a297b1d568823391a99f004e2db7a2ff9f6d55baa6b90e9dee",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.module",
+      "sha256": "ea7e505e607504d7dd50e4e4594ca67ec0924e174d2cd825e12ae45742fc1530",
+      "size": 2779
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.module.md5",
+      "sha256": "e0ebe59e006c58d64b346a8fb6cdbb208403db0dc02fd7ad6259f496aed0f7ca",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.module.sha1",
+      "sha256": "cf6e89a600483f0f2615c5db12c94ad6a0ca88c97f2a895b0fcd7078d8a228c0",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.module.sha256",
+      "sha256": "50907b94c72b7f66243ddcc8007c1988bc442ede1cf6400803259cf788b732e4",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.module.sha512",
+      "sha256": "fb358c16a71f79455ddfa67041c7a893d7beaab20a080bc177013a6aff187860",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.pom",
+      "sha256": "49b7e506c26a462591bf0e9ee1130e7cbfc190c890b928a251b5254129787a80",
+      "size": 1920
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.pom.md5",
+      "sha256": "c1584079c21b75a24424bddc0dd18d6eeb674fed5f0c657d1f90b3d207fed8fb",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.pom.sha1",
+      "sha256": "a7673c14e10a4d62f0ae766175c07b8ac2772bb06238c676eb0b453333c4ecc1",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.pom.sha256",
+      "sha256": "0830add875d918082c9b74b95a98b3c395a0038633344026fc30074fbefa6843",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/localization/0.1.57/localization-0.1.57.pom.sha512",
+      "sha256": "f76a0e2281bceac2d64e78ecc29e408d86f197fcd27cab6a1e42ec0102ff3948",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.aar",
+      "sha256": "88a4f6deaff70521059cf8b705bf511d7afc57c9e1c2c9eb799a6e0b40010640",
+      "size": 19121
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.aar.md5",
+      "sha256": "0baa46614dceef63e351202dcfdc05c9690df5d38685d6a98a45ffbb071e5d29",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.aar.sha1",
+      "sha256": "ce26e5db3d213ae52d8ae1c0d610b6c82d7993a8e5e2e9c9eb500eda6cb93619",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.aar.sha256",
+      "sha256": "09838244fcfe93a7aaa212fdbd4c02f5c1be159441cecee566d2866ff47e1b02",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.aar.sha512",
+      "sha256": "b94da1b5bed036a503e3f5b98f21c31e6a79ced9ac0b3c04ee933afddda811b5",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.module",
+      "sha256": "695544d3724613ad1bd70c0c28305dbe1675dd588e21090861032cf85fe5fb0e",
+      "size": 3490
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.module.md5",
+      "sha256": "d20a3fb82e4f51fbfb78a03a6b7d7f82225748be879cee46157e2d68b9ee99d6",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.module.sha1",
+      "sha256": "ec2d5786e8635b5761ba0fb3eb3e53d4197a8b9db4b21c54cf2eff2455db52ef",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.module.sha256",
+      "sha256": "1915472eed8d88a44d88d007600fb93b56d6cc5a5bb4bdfa9dd6dee015b6b0ea",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.module.sha512",
+      "sha256": "9cb6e180f638cf1167bc9cf92e48153968ff3996e30309080d2b1666aafd49df",
+      "size": 129
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.pom",
+      "sha256": "4ff4c2fe6e79bec4c472489c9047d3b82af4b3c1a109597bc6e060cd9882b848",
+      "size": 2349
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.pom.md5",
+      "sha256": "053a953e42c46acc788a70b13175ec1351a0a18503c36a7cbad33dcd6aed3241",
+      "size": 33
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.pom.sha1",
+      "sha256": "4b894023be1ed5a6fb5c3f340fea3e2a9012516e6338c283958ed01c3d499bb3",
+      "size": 41
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.pom.sha256",
+      "sha256": "b44233c1600056afc8399c671adb1a9e5bb34aa9c0e396e4e5a1c1a806effaa1",
+      "size": 65
+    },
+    {
+      "path": "maven/net/mamby/androidkit/navigation3/0.1.57/navigation3-0.1.57.pom.sha512",
+      "sha256": "93be89f89be66ce0086564fe654d5735f96dad4528043d313cda7ad0e95ef450",
+      "size": 129
+    }
+  ]
+}

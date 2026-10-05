@@ -50,6 +50,11 @@ AndroidKitPage(
 
 ## View and scrolling
 
+`AndroidKitPage` supplies Kit-owned start/end margins along with its measured
+system/chrome clearance. Pass its padding directly to `AndroidKitList.contentPadding`;
+the list/grid does not add a second horizontal margin. A standalone list uses
+only the `contentPadding` supplied by its owner.
+
 Hosts switch `list.view` between `AndroidKitListView.List` and `.Grid`. Selection
 belongs to the logical list and survives a view switch. List and grid keep separate
 scroll states. Grid uses an adaptive column count by default; `gridColumns` accepts
@@ -76,6 +81,13 @@ Activation is host-triggered; long press always opens the menu in normal mode.
 Selecting none leaves the mode open. Select all toggles all/none over eligible
 supplied items, including off-screen items; it does not include unloaded records.
 New IDs are unselected. Removed or ineligible IDs are pruned.
+Select all and the selected count share one pill. Its checkbox has two states:
+checked when every eligible item is selected, unchecked otherwise. Tapping the
+pill with a partial selection selects all eligible items; tapping it when all
+are selected clears the selection. Items use the same circled check icon when
+selected and the same empty circle when unselected.
+List items place the icon in a leading gutter. Grid items overlay it at the card's
+top-start corner without narrowing the body; the corner follows layout direction.
 
 Share the same `AndroidKitListSelection` with Page or SearchPage and the enclosing
 `AndroidKitFloatingNavigation`. These owners replace the header, suppress ordinary
@@ -109,8 +121,9 @@ row; it does not remove records or assume confirmation succeeded.
 Menu highlight and selection feedback remain visible above opaque host backgrounds.
 Touch-and-hold, secondary mouse click, Menu/Shift+F10 and the accessibility menu action
 use the shared context menu. Delete also has a custom accessibility action. Selection
-uses full-row checkbox semantics, with a round tri-state Select all control and a
-localized selected-count description. The leading gutter follows layout direction.
+uses full-row checkbox semantics, with a two-state Select all/count pill and a
+localized selected-count description on that control. The leading gutter follows
+layout direction.
 
 The demo catalog includes one interactive List showcase with List/Grid switching,
 host-triggered selection, menu and swipe deletion, confirmation and bulk actions.
