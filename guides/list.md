@@ -55,10 +55,11 @@ system/chrome clearance. Pass its padding directly to `AndroidKitList.contentPad
 the list/grid does not add a second horizontal margin. A standalone list uses
 only the `contentPadding` supplied by its owner.
 
-Hosts switch `list.view` between `AndroidKitListView.List` and `.Grid`. Selection
+Hosts switch `list.view` between `AndroidKitListView.List` and `.Grid`. List is the
+default. Use the complete `AndroidKitList` component in either mode; Kit owns the
+lazy container, item spacing and adaptive grid columns. Selection
 belongs to the logical list and survives a view switch. List and grid keep separate
-scroll states. Grid uses an adaptive column count by default; `gridColumns` accepts
-Compose's `GridCells` as a layout option. Grid has **no swipe deletion**. Its menu
+scroll states. Grid uses Kit's adaptive column count. Grid has **no swipe deletion**. Its menu
 Delete and selection actions remain available.
 
 Stable, nonblank, unique String IDs are required. Filtering/hiding is represented
@@ -66,13 +67,21 @@ by removing items from the supplied collection. Keyed Compose `animateItem` hand
 insertions, removals and movement; selection feedback and chrome use brief transitions.
 Compose honors the system animation duration scale.
 
-Use `LazyListScope.androidKitListItems` in an existing Page/SearchPage list and
-`LazyGridScope.androidKitListItems` in an existing grid. Both use the same Kit item
-shell; the grid helper never enables swipe. Provide their shared `selectionState`
-and a complete eligible ID set above the lazy viewport, including off-screen items.
-Multiple declaration groups in one logical list must have globally unique keys.
-Match the supplied eligible IDs to the current collection's enabled/selectable
-items; deleted, hidden or filtered-out IDs must be removed from this set.
+The low-level lazy-list/grid item helpers are internal. Hosts cannot attach Kit
+list interactions to a separately configured lazy container or override grid
+column geometry. Supply a complete eligible ID set to the list state above the
+lazy viewport, including off-screen items. Match those IDs to the collection's
+enabled/selectable items; deleted, hidden or filtered-out IDs must be removed
+from the set.
+
+## Migration from 0.1.59
+
+Replace host-owned `LazyColumn`/`LazyVerticalGrid` containers using
+`androidKitListItems` with `AndroidKitList` and `rememberAndroidKitListState`.
+Pass the page padding directly as `contentPadding`, keep item bodies visual-only,
+and share the state's selection with page and navigation chrome. Remove
+`gridColumns`; Kit determines the adaptive grid geometry. Both List and Grid
+modes remain available, with their existing mode-specific interaction behavior.
 
 ## Selection and surrounding chrome
 

@@ -36,8 +36,11 @@ Use [section cards]({{ site.baseurl }}{% link guides/section-card.md %}) for typ
 Declare menu entries through the [action flyout]({{ site.baseurl }}{% link guides/action-flyout.md %})
 DSL; Kit renders their icons, text, spacing and dismissal behavior.
 
-[Lists]({{ site.baseurl }}{% link guides/list.md %}) accept application-owned item bodies while Kit
-owns item interaction, menus, selection and supported swipe actions.
+[Lists]({{ site.baseurl }}{% link guides/list.md %}) accept application-owned visual-only item
+bodies while Kit owns the lazy container, item spacing, adaptive grid columns,
+item interaction, menus, selection and supported swipe actions. Use the complete
+`AndroidKitList` in either List or Grid mode; its low-level item helpers are
+internal. Share the list state's selection with page and navigation chrome.
 
 ## Settings and history
 

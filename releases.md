@@ -21,6 +21,20 @@ metadata and artifact checksums. No implementation sources or source JARs are pu
 {% endfor %}
 ## Release notes
 
+### 0.1.60 — 6 October 2026
+
+`AndroidKitList` now owns its lazy container, item spacing and adaptive grid
+columns. Both List and Grid modes remain supported by the same component.
+
+This release removes `gridColumns` and makes the `androidKitListItems` lazy-list
+and lazy-grid helpers internal. Replace those helpers with `AndroidKitList` and
+`rememberAndroidKitListState`; pass page padding directly to `contentPadding`
+and share the state's selection with page and navigation chrome.
+
+List mode enables swipe deletion when a delete action is supplied. Grid retains
+menu deletion and selection actions, with swipe deletion unavailable. See the
+[migration guide]({{ '/guides/list/#migration-from-0159' | relative_url }}).
+
 ### 0.1.53 — 4 October 2026
 
 First public binary distribution through the [Maven endpoint]({{ '/maven/' | relative_url }}).
