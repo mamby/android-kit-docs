@@ -21,6 +21,15 @@ metadata and artifact checksums. No implementation sources or source JARs are pu
 {% endfor %}
 ## Release notes
 
+### 0.1.61 — 6 October 2026
+
+Fixes repeated swipe deletion after cancelling a confirmation or a failed save.
+When a host temporarily disables an item while confirming deletion, Kit now
+releases the swipe reset state even if Compose interrupts the reset.
+
+The sealed List/Grid API introduced in 0.1.60 remains unchanged. Grid retains
+menu deletion and selection actions, with swipe deletion unavailable.
+
 ### 0.1.60 — 6 October 2026
 
 `AndroidKitList` now owns its lazy container, item spacing and adaptive grid
