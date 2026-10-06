@@ -21,6 +21,18 @@ metadata and artifact checksums. No implementation sources or source JARs are pu
 {% endfor %}
 ## Release notes
 
+### 0.1.62 — 6 October 2026
+
+Cards accept optional visual-only trailing content, with a supported theme color
+and space reserved beside the card's text. Applications own the indicator's
+meaning and actions, including pin state, persistence and ordering.
+
+Checked selection indicators now have a themeable fill and contrasting checkmark.
+List items, Grid items and Select all share the same color roles.
+
+Rebuild consumers against this release because the Card function signatures
+have changed. Existing source calls that omit trailing content remain valid.
+
 ### 0.1.61 — 6 October 2026
 
 Fixes repeated swipe deletion after cancelling a confirmation or a failed save.

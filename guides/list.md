@@ -94,7 +94,9 @@ Select all and the selected count share one pill. Its checkbox has two states:
 checked when every eligible item is selected, unchecked otherwise. Tapping the
 pill with a partial selection selects all eligible items; tapping it when all
 are selected clears the selection. Items use the same circled check icon when
-selected and the same empty circle when unselected.
+selected and the same empty circle when unselected. The checked circle has a
+filled background with a contrasting checkmark. Theme these shared colors through
+componentColors.listSelection; this also covers the Select all pill.
 List items place the icon in a leading gutter. Grid items overlay it at the card's
 top-start corner without narrowing the body; the corner follows layout direction.
 

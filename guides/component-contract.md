@@ -30,6 +30,11 @@ Apply the managed content padding supplied by pages and sheets to the scrolling
 content. This lets the viewport remain edge-to-edge while clearing the component's
 measured chrome and system insets.
 
+Cards also accept optional visual-only trailing content for application-owned
+indicators. Kit reserves space and supplies the supported trailing-content color;
+the application supplies the localized description, state and actions. Keep this
+slot non-interactive. Pin persistence and ordering belong to the application.
+
 ## Typed controls and actions
 
 Use [section cards]({{ site.baseurl }}{% link guides/section-card.md %}) for typed rows and controls.

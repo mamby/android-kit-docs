@@ -46,7 +46,8 @@ color policy, and existing disabled-state color behavior remains intact.
 
 | Component | Supported appearance inputs |
 | --- | --- |
-| Cards | Container, content, border and supporting-text colors |
+| Cards | Container, content, border, supporting-text and trailing-content colors |
+| List selection | Checked fill, checked glyph and unchecked outline colors shared by List, Grid and Select all |
 | Section cards and Settings | Container, content, border, divider and secondary-content colors; existing switch/slider colors |
 | Pages and lock pages | Background and content-protection colors; title/button/flyout surface colors |
 | Bottom sheets | Container, content, drag-handle, scrim, chrome and flyout colors |
@@ -95,3 +96,19 @@ Outer modifiers, app-list padding/arrangement, window insets, menu
 placement/offset/anchor, sheet sizing/fit, chrome visibility and typed action
 layout choices remain supported. Existing switch/slider color options and explicit
 tints remain color-only inputs. There are no compatibility style overloads.
+
+## Selection and card indicators
+
+Use componentColors.listSelection to configure AndroidKitListSelectionColors.
+checkedContainerColor controls the filled checked circle, checkedContentColor
+controls its checkmark, and uncheckedContentColor controls the empty outline.
+Unspecified colors follow primary, onPrimary and onSurface respectively. List
+items, Grid items and the Select all pill use the same indicator.
+
+AndroidKitCard accepts optional, visual-only trailingContent. The card reserves
+space beside its title, supporting text and body and follows layout direction.
+The slot inherits card.trailingContentColor through LocalContentColor; an
+instance color overrides the theme color. Unspecified inherits the card's
+content color. The host owns the indicator's meaning, state, localized
+description and actions. Pin persistence and pinned-first ordering stay in the
+host.
