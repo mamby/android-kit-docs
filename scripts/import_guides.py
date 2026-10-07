@@ -50,6 +50,10 @@ for name, (title, description, section) in GUIDES.items():
     (root / "guides" / f"{name}.md").write_text(header + content, encoding="utf-8", newline="\n")
 
 notices = (args.source / "THIRD_PARTY_NOTICES.md").read_text(encoding="utf-8")
+notices = notices.replace(
+    "(compose/src/main/resources/META-INF/LICENSE-MATERIAL-SYMBOLS)",
+    "(https://www.apache.org/licenses/LICENSE-2.0)",
+)
 (root / "THIRD_PARTY_NOTICES.md").write_text(notices, encoding="utf-8", newline="\n")
 license_text = (root / "LICENSE").read_text(encoding="utf-8")
 license_header = """---
