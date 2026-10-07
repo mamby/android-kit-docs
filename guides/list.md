@@ -4,8 +4,10 @@ description: Declare list and grid items, context actions, swipe deletion and bu
 permalink: /guides/list/
 section: Components
 ---
-`AndroidKitList` renders host-owned **visual-only** item bodies. Kit owns the full
-item's tap, context menu, highlight, swipe, selection check, semantics and animation.
+`AndroidKitList` renders host-owned **visual-only** item bodies inside a shared Kit
+card surface. Kit owns the full item's tap, context menu, highlight, swipe,
+selection check, semantics and animation. Supply the item's body without another
+card wrapper or outer padding; Kit wraps the complete body and its selection indicator together.
 Do not place clickable controls, pointer/key handlers, menus or selectable text
 inside the body. This body slot is an explicit exception to sealed item rendering;
 it does not open Kit chrome, interaction feedback or control styling to hosts.
@@ -35,20 +37,49 @@ AndroidKitPage(
         key = { it.id },
         state = list,
         contentPadding = clearance,
+        normalItemPadding = PaddingValues(AndroidKitThemeTokens.dimensions.spaceMedium),
+        pinAction = { record -> AndroidKitListPinAction(record.isPinned, { onPinnedChange(record.id, it) }) },
+        pinningEnabled = pinningAvailable,
         enabled = { it.enabled },
         selectable = { it.selectable },
         onItemClick = onOpen,
         contextMenu = { record -> {
-            item(selectLabel, onClick = { list.selection.activate(setOf(record.id)) })
+            item(shareLabel, icon = shareIcon, onClick = { onShare(record.id) })
         } },
         deleteAction = { record -> AndroidKitListDeleteAction({ onDelete(record.id) }) },
+        swipeEnabled = false, // Keep menu Delete without swipe gestures.
     ) { record ->
-        AndroidKitCard(title = record.title) { Text(record.description) }
+        Column {
+            Text(record.title)
+            Text(record.description)
+        }
     }
 }
 ```
 
 ## View and scrolling
+
+`normalItemPadding` sets host-owned item body padding inside the shared card in
+normal mode, for both List and Grid. It defaults to zero to preserve existing
+normal-mode layouts. Move the body's outer padding into this argument; the body
+must not apply another outer inset or card wrapper.
+
+Selection mode ignores `normalItemPadding`. Kit applies 0 dp at the body start
+beside the List check and 16 dp at the end, top and bottom. The check remains
+centered in its 48 dp gutter, giving a 14 dp check-to-body gap. Grid selection
+uses 16 dp on every side and keeps its check overlay at the card's top-start.
+Changes to normal padding while selecting apply when selection closes.
+Internal spacing between elements inside the host body remains host-owned.
+
+Entering and leaving selection use coordinated, non-bouncy springs for gutter,
+body padding and card size, with a 250 ms check fade. List opens and closes its
+gutter while the item content shifts. Grid fades its overlaid checks without
+introducing a gutter; body padding transitions from host normal padding to Kit
+selection padding. Springs preserve movement velocity when selection reverses
+mid-transition. The final padding and gutter values above remain unchanged.
+Selection input and semantics switch immediately, while the outgoing check
+keeps its visual state until it fades out.
+Compose applies the device's animation duration scale to these transitions.
 
 `AndroidKitPage` supplies Kit-owned start/end margins along with its measured
 system/chrome clearance. Pass its padding directly to `AndroidKitList.contentPadding`;
@@ -82,10 +113,17 @@ Pass the page padding directly as `contentPadding`, keep item bodies visual-only
 and share the state's selection with page and navigation chrome. Remove
 `gridColumns`; Kit determines the adaptive grid geometry. Both List and Grid
 modes remain available, with their existing mode-specific interaction behavior.
+Move existing outer item-body padding to `normalItemPadding`. Selection padding
+is now applied once by Kit; remove mode-dependent padding from item bodies.
 
 ## Selection and surrounding chrome
 
-Activation is host-triggered; long press always opens the menu in normal mode.
+Long press enters selection with the pressed item selected when selection is
+available and the item is enabled/selectable. This applies in List and Grid,
+including items with no primary click or menu. Set `selectionAvailable = false`
+in `rememberAndroidKitListState` to use long press for the item context menu.
+Secondary mouse click and Menu/Shift+F10 still open the menu in normal mode.
+Hosts can also activate selection explicitly.
 `activate(setOf(id))` can start with an item selected. `activate()` starts with zero.
 Selecting none leaves the mode open. Select all toggles all/none over eligible
 supplied items, including off-screen items; it does not include unloaded records.
@@ -97,7 +135,8 @@ are selected clears the selection. Items use the same circled check icon when
 selected and the same empty circle when unselected. The checked circle has a
 filled background with a contrasting checkmark. Theme these shared colors through
 componentColors.listSelection; this also covers the Select all pill.
-List items place the icon in a leading gutter. Grid items overlay it at the card's
+List items place the icon centered inside the shared card surface's 48 dp
+leading gutter; Kit pads the body separately. Grid items overlay it at the card's
 top-start corner without narrowing the body; the corner follows layout direction.
 
 Share the same `AndroidKitListSelection` with Page or SearchPage and the enclosing
@@ -118,24 +157,75 @@ failure messages, and should use their lifecycle-aware state holder for durable 
 The UI coroutine is cancelled when its action bar leaves composition. Cancellation
 never reports success.
 
+Declare the corresponding bulk actions in `AndroidKitListSelection` so the
+selection action bar offers the item menu's operations for the selected IDs.
+The demo shares Pin/Unpin, Share and Delete across these two surfaces. Item menu
+callbacks remain single-item operations; bulk callbacks retain their explicit
+completion, cancellation and failure contract.
+
 Selection is deliberately not saved: recreation starts in normal mode. Hoist the
 owner per logical page, not into a retained singleton or ViewModel. Normal navigation
-away disposes the page owner. There is no automatic selection entry or persisted data.
+away disposes the page owner. Selection does not persist data.
+
+## Pinning
+
+Supply a typed `AndroidKitListPinAction(pinned, onPinnedChange, enabled)` for each
+item that supports pinning. Kit groups pinned items at the top beneath a localized
+Pinned heading, with a divider before the remaining items. Source order is preserved
+within each group. The heading and divider span the full adaptive grid width, so
+remaining items start on a new row. No empty Pinned section is shown, and no item
+pin icon or trailing pin space is reserved.
+
+The Pinned heading has a 20 dp leading pin icon with an 8 dp icon-to-title gap.
+Its gap to the first item row is 8 dp; spacing between item rows remains 16 dp.
+
+Kit adds a localized Pin or Unpin menu entry with the corresponding icon and a
+custom accessibility action. Pin state, persistence and source order remain
+host-owned; Kit groups the supplied items without mutating their data. Supply
+items in their normal source order; the demo delegates grouping to the component.
+Do not duplicate the section or menu entry in the body or host menu.
+
+`pinningEnabled` defaults to `true` and independently controls the Kit section,
+menu entry and accessibility action in List and Grid. Setting it to `false` leaves
+the supplied host state untouched, renders the supplied source order and retains
+unrelated menu/Delete/swipe behavior.
+An item without a pin action has no pin UI. An action with `enabled = false` keeps
+the item in the Pinned section but disables Pin/Unpin. No section rendering or
+geometry overrides are exposed. Section colors follow the supported
+`componentColors.sectionCard` secondary content and divider colors.
+
+Selection keeps the Pinned section. Supply corresponding bulk Pin/Unpin actions
+through `AndroidKitListSelection`, and condition those actions on the same
+availability flag. The component cannot infer bulk persistence or confirmation
+from a single-item callback.
 
 ## Delete and accessibility
 
 Declare a typed `AndroidKitListDeleteAction` once. Kit appends a localized, destructive
-Delete entry to the item menu and enables both swipe directions in List view. Disabled
+Delete entry to the item menu. `swipeEnabled` independently controls both swipe
+directions in List view and defaults to `true` to preserve existing callers.
+Setting it to `false` retains menu and accessibility Delete. Disabled
 or missing Delete disables swipe. Kit invokes the host callback and resets a retained
 row; it does not remove records or assume confirmation succeeded.
 
 Menu highlight and selection feedback remain visible above opaque host backgrounds.
-Touch-and-hold, secondary mouse click, Menu/Shift+F10 and the accessibility menu action
-use the shared context menu. Delete also has a custom accessibility action. Selection
+Touch-and-hold and its accessibility action select an eligible item when selection
+is available, otherwise they open the shared context menu. Secondary mouse click
+and Menu/Shift+F10 open that menu in normal mode. Delete also has a custom accessibility action. Selection
 uses full-row checkbox semantics, with a two-state Select all/count pill and a
 localized selected-count description on that control. The leading gutter follows
 layout direction.
 
 The demo catalog includes one interactive List showcase with List/Grid switching,
-host-triggered selection, menu and swipe deletion, confirmation and bulk actions.
+long-press and host-triggered selection, menu and swipe deletion, confirmation,
+Pin/Unpin and bulk actions. Pinned items appear in the component's top section
+while retaining their relative order; Unpin restores their source order in the
+remaining group and uses the crossed-out pin menu icon.
+Open the header's settings icon (Interactive scenarios) to toggle Selection mode,
+Pin and Swipe to delete independently. With Pin off, the demo hides bulk pin
+actions and uses normal record order while retaining pin state; switching it on
+restores the Pinned section. With Selection mode off, long press opens the
+item menu and the explicit Select action is omitted. All switches start on and
+retain their values across view changes. Swipe to delete is unavailable in Grid;
+its preference is retained for returning to List.
 See [component ownership]({{ site.baseurl }}{% link guides/component-contract.md %}).
