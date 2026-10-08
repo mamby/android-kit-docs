@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.mamby.androidkit</groupId>
+  <artifactId>bom</artifactId>
+  <version>0.1.65</version>
+  <packaging>pom</packaging>
+  <name>Android Kit BOM</name>
+  <description>Version alignment for all Android Kit artifacts.</description>
+  <url>https://mamby.github.io/android-kit-docs/</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/license/mit</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>mamby</id>
+      <name>Mamby Camara</name>
+    </developer>
+  </developers>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>net.mamby.androidkit</groupId>
+        <artifactId>foundation</artifactId>
+        <version>0.1.65</version>
+      </dependency>
+      <dependency>
+        <groupId>net.mamby.androidkit</groupId>
+        <artifactId>localization</artifactId>
+        <version>0.1.65</version>
+      </dependency>
+      <dependency>
+        <groupId>net.mamby.androidkit</groupId>
+        <artifactId>compose</artifactId>
+        <version>0.1.65</version>
+      </dependency>
+      <dependency>
+        <groupId>net.mamby.androidkit</groupId>
+        <artifactId>navigation3</artifactId>
+        <version>0.1.65</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
