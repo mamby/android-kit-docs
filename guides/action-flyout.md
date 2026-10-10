@@ -47,6 +47,13 @@ before entering the builder. Actions accept `ImageVector` or `Painter` icon data
 Kit renders the icon, label, spacing, styling, and dismissal behavior.
 Content scrolls vertically within the shared flyout.
 
+For selectable options, pass `selected = true` or `false` to `item`, toolbar
+flyout items, or `AndroidKitAction` header actions. A selected menu option keeps
+its leading icon and label and shows a Kit-owned checkmark at the trailing edge,
+following RTL layout. Selection is exposed to accessibility services. Leave
+`selected = null` (the default) for ordinary actions. Callers retain selection
+state and update it through `onClick`; Kit owns the indicator and its styling.
+
 Use `placement` (`Above` or `Below`) and `horizontalAlignment` (`Start` or `End`)
 to choose the preferred anchor edge. The flyout respects RTL and falls back to
 another position when the preferred edge cannot fit within the window. It also

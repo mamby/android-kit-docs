@@ -86,6 +86,13 @@ system/chrome clearance. Pass its padding directly to `AndroidKitList.contentPad
 the list/grid does not add a second horizontal margin. A standalone list uses
 only the `contentPadding` supplied by its owner.
 
+Use `summary = AndroidKitListSummary(text, contentDescription)` for a compact,
+non-interactive summary before the records. It is ordinary scrolling content in
+List mode and spans every column in Grid mode. It is separate from item keys,
+selection, pinning, menus and swipe actions. Kit owns its typography, color and
+bottom spacing. `AndroidKitListSummaryText` uses the same appearance in a
+host-owned empty-content layout.
+
 Hosts switch `list.view` between `AndroidKitListView.List` and `.Grid`. List is the
 default. Use the complete `AndroidKitList` component in either mode; Kit owns the
 lazy container, item spacing and adaptive grid columns. Selection
