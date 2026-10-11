@@ -90,7 +90,7 @@ Use `summary = AndroidKitListSummary(text, contentDescription)` for a compact,
 non-interactive summary before the records. It is ordinary scrolling content in
 List mode and spans every column in Grid mode. It is separate from item keys,
 selection, pinning, menus and swipe actions. Kit owns its typography, color and
-bottom spacing. `AndroidKitListSummaryText` uses the same appearance in a
+12 dp bottom spacing. `AndroidKitListSummaryText` uses the same appearance in a
 host-owned empty-content layout.
 
 Hosts switch `list.view` between `AndroidKitListView.List` and `.Grid`. List is the
@@ -173,6 +173,61 @@ completion, cancellation and failure contract.
 Selection is deliberately not saved: recreation starts in normal mode. Hoist the
 owner per logical page, not into a retained singleton or ViewModel. Normal navigation
 away disposes the page owner. Selection does not persist data.
+
+## Typed sorting
+
+Sorting is optional. Declare `AndroidKitListSortField.Text`, `.Number`, `.DateTime`
+or `.Duration` with a stable ID, localized host-owned name, typed nullable value
+accessor and optional default direction. Numeric values must be comparable numbers;
+dates must be comparable `java.time` temporal values; durations use `kotlin.time.Duration`.
+
+```kotlin
+var order by remember {
+    mutableStateOf(AndroidKitListSortOrder("name", AndroidKitListSortDirection.Ascending))
+}
+val name = AndroidKitListSortField.Text<Record>("name", nameLabel) { it.name }
+val sort = AndroidKitListSort(
+    fields = listOf(name, AndroidKitListSortField.DateTime<Record, Instant>("added", addedLabel) { it.createdAt }),
+    order = order,
+    tieBreakers = listOf(name),
+)
+AndroidKitPage(actions = listOf(androidKitListSortAction(sort) { order = it })) { padding ->
+    AndroidKitList(
+        items = filteredRecords, key = { it.id }, state = list,
+        contentPadding = padding, sort = sort,
+        summary = androidKitListSortSummary(sort),
+    ) { record -> Text(record.name) }
+}
+```
+
+Share the same sort definition/order above list and page chrome. Hosts control
+order changes and persistence; Kit introduces no persistence. A different field
+uses its declared default direction: ascending by default for text/numbers/durations,
+descending for dates. Selecting the current field retains its direction.
+
+The Sort submenu seals its title, type/direction icons, selection checks and fixed
+terms. Its parent row displays the Sort icon, title and chevron. The current field
+and direction appear in the list summary and as checked submenu choices.
+Menus show Alphabetical/Reverse alphabetical,
+Smallest/Largest first, Oldest/Newest first, or Shortest/Longest first. Compact
+terms are localized and alphabetical shorthand follows the writing system.
+There are no host icon, fixed-label, direction-text or renderer overrides.
+The generic flyout also accepts this typed action through `submenu(action)`.
+
+Kit uses locale-aware text collation and Kotlin comparator/sorting APIs. Missing
+values stay last in both directions. Secondary fields use their default directions;
+equal values finish with the stable item key. Pin grouping follows sorting and
+preserves order within each section in both List and Grid. Filtering and selection
+eligibility remain host-owned. Reuse the same order for host operations with
+`sort.sortedItems(items, key, locale)`.
+
+`androidKitListSortSummary(sort)` provides compact text and a full spoken description
+that hosts may combine with domain filters/counts in the scrolling summary.
+Without `sort`, the component preserves its supplied source order.
+
+The List demo combines this sort summary with its active numeric filter and the
+visible/total count. Its Filter submenu changes the supplied collection and eligible
+selection IDs; the summary scrolls with the records in both List and Grid.
 
 ## Pinning
 
