@@ -208,9 +208,9 @@ descending for dates. Selecting the current field retains its direction.
 The Sort submenu seals its title, type/direction icons, selection checks and fixed
 terms. Its parent row displays the Sort icon, title and chevron. The current field
 and direction appear in the list summary and as checked submenu choices.
-Menus show Alphabetical/Reverse alphabetical,
-Smallest/Largest first, Oldest/Newest first, or Shortest/Longest first. Compact
-terms are localized and alphabetical shorthand follows the writing system.
+Menus show A–Z/Z–A for text, Smallest/Largest first, Oldest/Newest first, or
+Shortest/Longest first. Text direction labels are localized and alphabetical
+shorthand follows the writing system.
 There are no host icon, fixed-label, direction-text or renderer overrides.
 The generic flyout also accepts this typed action through `submenu(action)`.
 
@@ -221,8 +221,9 @@ preserves order within each section in both List and Grid. Filtering and selecti
 eligibility remain host-owned. Reuse the same order for host operations with
 `sort.sortedItems(items, key, locale)`.
 
-`androidKitListSortSummary(sort)` provides compact text and a full spoken description
-that hosts may combine with domain filters/counts in the scrolling summary.
+`androidKitListSortSummary(sort)` shows the field name followed by ↑ for ascending
+or ↓ for descending, such as Name ↑, with a full spoken description. Hosts may
+combine it with domain filters/counts in the scrolling summary.
 Without `sort`, the component preserves its supplied source order.
 
 The List demo combines this sort summary with its active numeric filter and the
