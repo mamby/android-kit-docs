@@ -22,6 +22,7 @@ Box {
         expanded = expanded,
         onDismissRequest = { expanded = false },
     ) {
+        groupLabel(label = "Actions")
         item(label = "Edit", onClick = onEdit, icon = editIcon)
         item(label = "Share", onClick = onShare)
         separator()
@@ -40,12 +41,18 @@ icon buttons. Hosts declare the action's meaning; Kit owns its colors.
 The caller owns the expanded state; outside clicks and Back request dismissal
 through the popup's default `PopupProperties`.
 
-The content builder accepts only `item`, `separator`, and `submenu` declarations.
+The content builder accepts only `item`, `separator`, `groupLabel`, and `submenu` declarations.
 It is not composable and does not expose `ColumnScope` or arbitrary UI slots.
 Resolve labels with `stringResource` and icons with composable resource loaders
 before entering the builder. Actions accept `ImageVector` or `Painter` icon data;
 Kit renders the icon, label, spacing, styling, and dismissal behavior.
 Content scrolls vertically within the shared flyout.
+
+Use `groupLabel(label)` to introduce a group of menu entries. Group labels are
+plain text with accessibility heading semantics and no click action; tapping
+them does not dismiss the menu. Their text wraps at larger font scales, and
+AndroidKit owns their appearance. Page and sheet header action lists accept
+`AndroidKitActionGroupLabel(label)`, which keeps the group in the overflow menu.
 
 For selectable options, pass `selected = true` or `false` to `item`, toolbar
 flyout items, or `AndroidKitAction` header actions. A selected menu option keeps

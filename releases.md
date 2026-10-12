@@ -21,6 +21,15 @@ metadata and artifact checksums. No implementation sources or source JARs are pu
 {% endfor %}
 ## Release notes
 
+### 0.1.73 — 12 October 2026
+
+Menus support non-interactive group labels through `groupLabel(label)` and
+`AndroidKitActionGroupLabel(label)`. Labels expose accessibility heading semantics,
+wrap at larger font scales, and keep their following entries in the overflow menu.
+Page, sheet, standalone and action-bar menus share the same Kit-owned rendering.
+
+Scrolling list summaries use the current Kit-owned 16 dp bottom spacing.
+
 ### 0.1.62 — 6 October 2026
 
 Cards accept optional visual-only trailing content, with a supported theme color

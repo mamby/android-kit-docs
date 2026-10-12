@@ -90,7 +90,7 @@ Use `summary = AndroidKitListSummary(text, contentDescription)` for a compact,
 non-interactive summary before the records. It is ordinary scrolling content in
 List mode and spans every column in Grid mode. It is separate from item keys,
 selection, pinning, menus and swipe actions. Kit owns its typography, color and
-12 dp bottom spacing. `AndroidKitListSummaryText` uses the same appearance in a
+16 dp bottom spacing. `AndroidKitListSummaryText` uses the same appearance in a
 host-owned empty-content layout.
 
 Hosts switch `list.view` between `AndroidKitListView.List` and `.Grid`. List is the

@@ -41,6 +41,10 @@ Use [section cards]({{ site.baseurl }}{% link guides/section-card.md %}) for typ
 Declare menu entries through the [action flyout]({{ site.baseurl }}{% link guides/action-flyout.md %})
 DSL; Kit renders their icons, text, spacing and dismissal behavior.
 
+Use `groupLabel(label)` in menu declarations or `AndroidKitActionGroupLabel(label)`
+in page and sheet action lists for non-interactive group headings. Kit keeps them
+in overflow, supplies heading semantics, and owns their appearance.
+
 [Lists]({{ site.baseurl }}{% link guides/list.md %}) accept application-owned visual-only item
 bodies while Kit owns the lazy container, item spacing, adaptive grid columns,
 item interaction, menus, selection and supported swipe actions. Use the complete

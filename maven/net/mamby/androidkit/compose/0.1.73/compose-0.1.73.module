@@ -1,0 +1,183 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.mamby.androidkit",
+    "module": "compose",
+    "version": "0.1.73",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.datastore",
+          "module": "datastore-preferences-core",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "foundation",
+          "version": {
+            "requires": "0.1.73"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.09.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          }
+        },
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3",
+          "version": {
+            "requires": "1.5.0-alpha29"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "compose-0.1.73.aar",
+          "url": "compose-0.1.73.aar",
+          "size": 1554422,
+          "sha512": "d92352976f83e6bca83da8e5c18672444420e3af5bd85117ddea45e88d843c9fb7abbe67a4c86ac12227aa43c5cb5785e951a1bf8b3d7b9c25dfa1311db84383",
+          "sha256": "30bfbe4ce5c4b4accbf68cfdbbe4e54df878b3bf13b32d3499fba5cf468afa1a",
+          "sha1": "8f271c808fea5b42bffe8e7c816d5ed11ced6bb3",
+          "md5": "1d6d86d6d5166bbb0aeb9546f0e49dc9"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.activity",
+          "module": "activity-compose",
+          "version": {
+            "requires": "1.14.0-alpha03"
+          }
+        },
+        {
+          "group": "androidx.compose.animation",
+          "module": "animation"
+        },
+        {
+          "group": "androidx.compose.material3.adaptive",
+          "module": "adaptive",
+          "version": {
+            "requires": "1.4.0-alpha02"
+          }
+        },
+        {
+          "group": "androidx.compose.material3.adaptive",
+          "module": "adaptive-layout",
+          "version": {
+            "requires": "1.4.0-alpha02"
+          }
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3-adaptive-navigation-suite"
+        },
+        {
+          "group": "androidx.datastore",
+          "module": "datastore-preferences-core",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "foundation",
+          "version": {
+            "requires": "0.1.73"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.09.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          }
+        },
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3",
+          "version": {
+            "requires": "1.5.0-alpha29"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "compose-0.1.73.aar",
+          "url": "compose-0.1.73.aar",
+          "size": 1554422,
+          "sha512": "d92352976f83e6bca83da8e5c18672444420e3af5bd85117ddea45e88d843c9fb7abbe67a4c86ac12227aa43c5cb5785e951a1bf8b3d7b9c25dfa1311db84383",
+          "sha256": "30bfbe4ce5c4b4accbf68cfdbbe4e54df878b3bf13b32d3499fba5cf468afa1a",
+          "sha1": "8f271c808fea5b42bffe8e7c816d5ed11ced6bb3",
+          "md5": "1d6d86d6d5166bbb0aeb9546f0e49dc9"
+        }
+      ]
+    }
+  ]
+}
