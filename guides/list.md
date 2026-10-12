@@ -86,12 +86,31 @@ system/chrome clearance. Pass its padding directly to `AndroidKitList.contentPad
 the list/grid does not add a second horizontal margin. A standalone list uses
 only the `contentPadding` supplied by its owner.
 
-Use `summary = AndroidKitListSummary(text, contentDescription)` for a compact,
-non-interactive summary before the records. It is ordinary scrolling content in
+Use `summary = AndroidKitListSummary(matchingCount, totalCount, activeFilters = filters)`
+for a compact, non-interactive summary. Hosts supply complete collection counts
+and ordered active filters as `AndroidKitListSummaryFilter(label, contentDescription)`.
+Kit composes **count → active filters → current sort**, for example
+`6 / 7 items · With phone +1 · Name ↑`. Equal counts use `7 items`; no active
+filters means no filter segment. Kit shows the first filter and `+N` for the
+others; screen readers receive every full filter label and matching/total counts.
+Sort comes from the list's actual `sort`, rather than a separate summary value.
+
+`itemCountResource` optionally supplies a domain plural resource, such as
+`%1$s contact` / `%1$s contacts`. Its string argument is Kit's formatted number
+or fraction; the overall count selects the plural form. Generic localized items
+are the default. Kit owns number formatting, fraction/+N notation, separators,
+ordering and spoken count/sort wording. Counts satisfy
+`0 <= matchingCount <= totalCount`. Finished strings and rendering/style overrides
+are not accepted. The old string constructor and public
+`androidKitListSortSummary` composer are removed; migrate callers with Kit.
+
+The summary is ordinary scrolling content in
 List mode and spans every column in Grid mode. It is separate from item keys,
 selection, pinning, menus and swipe actions. Kit owns its typography, color and
-16 dp bottom spacing. `AndroidKitListSummaryText` uses the same appearance in a
-host-owned empty-content layout.
+16 dp bottom spacing. Summaries stay on one line and use an ellipsis when space
+is limited; the complete `contentDescription` remains available to screen readers.
+`AndroidKitListSummaryText(summary, sort = sort)` uses the same sealed composition
+and appearance in a host-owned empty-content layout.
 
 Hosts switch `list.view` between `AndroidKitListView.List` and `.Grid`. List is the
 default. Use the complete `AndroidKitList` component in either mode; Kit owns the
@@ -195,7 +214,7 @@ AndroidKitPage(actions = listOf(androidKitListSortAction(sort) { order = it })) 
     AndroidKitList(
         items = filteredRecords, key = { it.id }, state = list,
         contentPadding = padding, sort = sort,
-        summary = androidKitListSortSummary(sort),
+        summary = AndroidKitListSummary(filteredRecords.size, records.size),
     ) { record -> Text(record.name) }
 }
 ```
@@ -221,13 +240,13 @@ preserves order within each section in both List and Grid. Filtering and selecti
 eligibility remain host-owned. Reuse the same order for host operations with
 `sort.sortedItems(items, key, locale)`.
 
-`androidKitListSortSummary(sort)` shows the field name followed by ↑ for ascending
-or ↓ for descending, such as Name ↑, with a full spoken description. Hosts may
-combine it with domain filters/counts in the scrolling summary.
+The sealed summary shows the field name followed by ↑ for ascending or ↓ for
+descending, such as Name ↑, with a full spoken description. Kit derives this
+segment from the same `sort` that orders the records.
 Without `sort`, the component preserves its supplied source order.
 
-The List demo combines this sort summary with its active numeric filter and the
-visible/total count. Its Filter submenu changes the supplied collection and eligible
+The List demo supplies typed collection counts and its active numeric filter;
+Kit composes its summary. Its Filter submenu changes the supplied collection and eligible
 selection IDs; the summary scrolls with the records in both List and Grid.
 
 ## Pinning
