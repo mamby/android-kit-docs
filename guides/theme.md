@@ -42,7 +42,7 @@ floating-surface color (for floating roles), or current palette default.
 Explicit instance colors take precedence. Replacing a definition's color scheme
 recomputes unspecified defaults instead of retaining colors from the old scheme.
 Explicit overrides remain explicit. Destructive actions retain the Kit error
-color policy, and existing disabled-state color behavior remains intact.
+color policy, and disabled states retain their semantic color roles.
 
 | Component | Supported appearance inputs |
 | --- | --- |
@@ -61,6 +61,29 @@ colors. Component colors inherit from the palette unless explicitly overridden.
 Container alpha for floating surfaces follows `floatingSurfaceOpacityLevel`,
 including surfaces with an explicit container color. Keep the existing persisted
 0–100 setting; this migration does not change its range or opacity mapping.
+
+## Foreground colors and transparency
+
+Kit-owned static text, labels, icons and borders must use opaque theme-derived
+colors, including their disabled variants. Foregrounds inside translucent
+components follow the same rule. Use a semantic palette color directly, or bake
+a muted shade into an opaque color with Compose `Color.compositeOver` against
+the intended opaque container/reference surface. Setting the original foreground
+alpha to `1f` alone restores its full-strength shade rather than preserving the
+muted color.
+
+Floating foreground defaults use the component's base container color with
+alpha `1f` as their reference. The normal border retains its 45% outline-variant
+blend, disabled text/icons their 38% on-surface blend and disabled borders their
+12% on-surface blend, but the resulting colors render fully opaque. These shades
+are fixed relative to that reference; they do not track content visible through
+the translucent background.
+
+Keep alpha where transparency is the intended behavior: background/fill
+transparency (including disabled fills), scrims, shadows, gradients, overlay
+highlights and visibility animations. Do not convert these to opaque colors.
+Explicit host color overrides remain explicit, and Material-owned default
+styling is preserved. Review new Kit foreground defaults against this rule.
 
 ## Reading shared scales
 
