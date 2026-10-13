@@ -89,16 +89,20 @@ only the `contentPadding` supplied by its owner.
 Use `summary = AndroidKitListSummary(matchingCount, totalCount, activeFilters = filters)`
 for a compact, non-interactive summary. Hosts supply complete collection counts
 and ordered active filters as `AndroidKitListSummaryFilter(label, contentDescription)`.
-Kit composes **count → active filters → current sort**, for example
-`6 / 7 items · With phone +1 · Name ↑`. Equal counts use `7 items`; no active
-filters means no filter segment. Kit shows the first filter and `+N` for the
-others; screen readers receive every full filter label and matching/total counts.
+Kit composes **current sort → filter state with parenthesized count**, for example
+`Name ↑ · Phone +1 (6/7)`. Active filters always retain the fraction, including
+`Name ↑ · Phone +1 (7/7)` when every item matches. With no active filters, Kit
+supplies its sealed localized **All** label, for example `Name ↑ · All (7)`.
+If counts differ without domain filters, the fraction is retained as `All (6/7)`.
+Kit shows the first filter and `+N` for the others; screen readers receive every
+full filter label, the matching quantity and, when applicable, matching/total counts.
 Sort comes from the list's actual `sort`, rather than a separate summary value.
 
 `itemCountResource` optionally supplies a domain plural resource, such as
-`%1$s contact` / `%1$s contacts`. Its string argument is Kit's formatted number
-or fraction; the overall count selects the plural form. Generic localized items
-are the default. Kit owns number formatting, fraction/+N notation, separators,
+`%1$s contact` / `%1$s contacts`, for accessibility. Its string argument is Kit's
+localized matching count, which selects the plural form. Visible counts omit
+the quantity noun. Generic localized items are the default. Kit owns number
+formatting, parenthesized counts, fraction/+N notation, separators,
 ordering and spoken count/sort wording. Counts satisfy
 `0 <= matchingCount <= totalCount`. Finished strings and rendering/style overrides
 are not accepted. The old string constructor and public
