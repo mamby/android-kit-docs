@@ -115,12 +115,15 @@ The library manifest declares `RECORD_AUDIO`, marks microphone hardware optional
 and includes Android's required `RecognitionService` package-visibility query.
 Runtime permission is requested only after tapping the microphone, using the
 [Activity Result permission contract](https://developer.android.com/training/permissions/requesting).
-Denial leaves typing available and shows guidance with an Open app settings action.
+Denial leaves typing available. When Android recommends a rationale, retrying the
+microphone first explains why voice input needs access, with OK and Cancel actions.
+Only OK requests permission again. A denial for which Android no longer recommends
+a rationale shows guidance with an Open app settings action.
 Errors use `AndroidKitFloatingTooltip` above the field, sharing the floating
 surface shadow and transparency, with a localized Close action and a
 six-second timeout extended by the system accessibility recommendation. No error
-icon is shown. Tapping the microphone retries permission; if access is still denied,
-the tooltip appears again with the settings action. Granting permission in settings clears the error without starting
+icon is shown. Once settings are required, tapping the microphone reopens that
+guidance without repeating a suppressed permission request. Granting permission in settings clears the error without starting
 recording. Other errors disappear after dismissal; editing or retrying clears them.
 Recognition does not continue in the background.
 
