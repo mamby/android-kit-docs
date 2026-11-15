@@ -1,0 +1,125 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.mamby.androidkit",
+    "module": "navigation3",
+    "version": "0.1.79",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.9.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "net.mamby.androidkit",
+          "module": "compose",
+          "version": {
+            "requires": "0.1.79"
+          }
+        },
+        {
+          "group": "androidx.navigation3",
+          "module": "navigation3-runtime",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "androidx.navigation3",
+          "module": "navigation3-ui",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation3-0.1.79.aar",
+          "url": "navigation3-0.1.79.aar",
+          "size": 19118,
+          "sha512": "fbd39cd0444e91ccf41aea37ffad57e46cf28850904222bc6ed71ede55fcfcf433587a9088bdd87ff2a071f12862ff7bfc5103c4cca70a929a7f082ff96f2ab6",
+          "sha256": "82d1dc3032220fc4df7f098a8ccedbc050b35a808306c9fbe9e0fef7e56f6aed",
+          "sha1": "d229cff913fb52b34fe9b29243c5f653cb323012",
+          "md5": "86234049fa01e42da10939e2333ed05e"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose.material3.adaptive",
+          "module": "adaptive-navigation3",
+          "version": {
+            "requires": "1.4.0-alpha03"
+          }
+        },
+        {
+          "group": "net.mamby.androidkit",
+          "module": "compose",
+          "version": {
+            "requires": "0.1.79"
+          }
+        },
+        {
+          "group": "androidx.navigation3",
+          "module": "navigation3-runtime",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "androidx.navigation3",
+          "module": "navigation3-ui",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation3-0.1.79.aar",
+          "url": "navigation3-0.1.79.aar",
+          "size": 19118,
+          "sha512": "fbd39cd0444e91ccf41aea37ffad57e46cf28850904222bc6ed71ede55fcfcf433587a9088bdd87ff2a071f12862ff7bfc5103c4cca70a929a7f082ff96f2ab6",
+          "sha256": "82d1dc3032220fc4df7f098a8ccedbc050b35a808306c9fbe9e0fef7e56f6aed",
+          "sha1": "d229cff913fb52b34fe9b29243c5f653cb323012",
+          "md5": "86234049fa01e42da10939e2333ed05e"
+        }
+      ]
+    }
+  ]
+}
