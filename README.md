@@ -27,7 +27,9 @@ Public usage guides are imported from the matching Kit checkout with:
 python scripts/import_guides.py --source <path-to-android-kit>
 ```
 
-The importer includes only selected Markdown usage guides, never library source.
+Edit consumer guidance in the matching Kit checkout's `docs` directory.
+The importer copies selected guide bodies and adapts headings and links for Jekyll.
+Keep maintainer-only trial notes in the Kit checkout.
 The Kit's `scripts/stage-docs-release.ps1` runs this importer automatically after
 staging and verifying the compiled packages. Review the imported examples and
 commit the packages and guides together. The site uses one release version.

@@ -64,8 +64,9 @@ state and update it through `onClick`; Kit owns the indicator and its styling.
 Use `placement` (`Above` or `Below`) and `horizontalAlignment` (`Start` or `End`)
 to choose the preferred anchor edge. The flyout respects RTL and falls back to
 another position when the preferred edge cannot fit within the window. It also
-accepts `offset`, `scrollState`, `properties`, and color-only `colors`.
-Container/item padding, shapes and typography are Kit-owned.
+accepts `offset`, `scrollState`, and `properties`. To override the theme colors
+for one flyout, pass `AndroidKitActionFlyoutColors` to `colors`. Kit owns the
+padding, shape and typography. See [themes]({{ site.baseurl }}{% link guides/theme.md %}).
 
 ## Submenus
 
@@ -105,5 +106,3 @@ Use named arguments when migrating the old positional `offset` overload.
 
 Toolbar and action-bar callers continue to use their existing `flyout { ... }`
 DSL. Their actions and separators now render through the same standalone flyout.
-
-Appearance is configured through the supported color-only `colors` input. See [themes]({{ site.baseurl }}{% link guides/theme.md %}).

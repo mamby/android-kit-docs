@@ -7,6 +7,7 @@ from pathlib import Path
 GUIDES = {
     "theme": ("Themes and colors", "Configure the palette and supported colors while preserving Kit's shared design.", "Foundations"),
     "navigation": ("Navigation", "Connect host-owned routes and back stacks to Kit's immediate page renderer.", "Foundations"),
+    "button": ("Buttons", "Choose a text button variant and configure its colors.", "Components"),
     "list": ("Lists and selection", "Declare list and grid items, context actions, swipe deletion and bulk selection.", "Components"),
     "section-card": ("Section cards", "Present actions, switches, sliders and information through typed entries.", "Components"),
     "settings": ("Settings", "Declare one complete settings catalog with persistent values and global search.", "Components"),
@@ -37,14 +38,6 @@ def convert_links(match):
 for name, (title, description, section) in GUIDES.items():
     content = (args.source / "docs" / f"{name}.md").read_text(encoding="utf-8")
     content = re.sub(r"\A# [^\n]+\n+", "", content)
-    if name == "list":
-        content = content.replace("See [testing](testing.md) and [component ownership](component-contract.md).", "See [component ownership](component-contract.md).")
-    if name == "action-flyout":
-        content = re.sub(r"## Material menu trial and submenus\n.*?(?=The standalone content DSL)", "## Submenus\n\n", content, flags=re.S)
-        content = "\n".join(line for line in content.splitlines() if not (line.startswith("|") and any(term in line for term in ("Style", "floatingDropdownMenuStyle", "IconSize", "ShadowElevation", "dropdownMenuStyle")))) + "\n"
-        content += "\nAppearance is configured through the supported color-only `colors` input. See [themes](theme.md).\n"
-    if name == "support-prompt":
-        content = content.replace("supportCardStyle customizes the card; the sheet uses\nthe existing bottomSheetStyle theme token.", "`supportCardColors` configures supported card colors; Kit owns the sheet's presentation.")
     content = re.sub(r"\(([a-z][a-z0-9-]*)\.md(#[^)]*)?\)", convert_links, content)
     header = f"---\ntitle: {title}\ndescription: {description}\npermalink: /guides/{name}/\nsection: {section}\n---\n"
     (root / "guides" / f"{name}.md").write_text(header + content, encoding="utf-8", newline="\n")

@@ -47,8 +47,8 @@ analytics, automatic scheduling, or persistent policy inside Kit.
 Kit owns the wording and translations in its private androidkit_compose_support_prompt_*
 resources. Kit supplies the languages listed in [localization]({{ site.baseurl }}{% link guides/localization.md %}). Hosts cannot override the
 translations; new languages must be added to Kit first. There are no per-prompt
-text or rendering slots. The component accepts supported `AndroidKitCardColors`
-only; Kit owns geometry, typography and controls.
+text or rendering slots. Pass `AndroidKitCardColors` to the component's `colors`
+parameter to customize the card. Kit controls its layout and the detail sheet.
 
 The existing Settings support footer remains an independent persistent entry.
 The Page demo has a Support prompt toggle; its donation action shows a preview
