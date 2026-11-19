@@ -17,6 +17,16 @@ val definition = AndroidKitThemeDefinition(
         borderColor = appColors.outlineVariant,
     ),
     componentColors = AndroidKitComponentColors(
+        button = AndroidKitButtonColors(
+            default = AndroidKitButtonVariantColors(
+                containerColor = appColors.primary,
+                contentColor = appColors.onPrimary,
+            ),
+            destructive = AndroidKitButtonVariantColors(
+                containerColor = appColors.error,
+                contentColor = appColors.onError,
+            ),
+        ),
         card = AndroidKitCardColors(borderColor = appColors.outline),
         floatingActionButton = AndroidKitFloatingActionButtonColors(
             surfaceColors = AndroidKitFloatingSurfaceColors(
@@ -46,6 +56,7 @@ color policy, and disabled states retain their semantic color roles.
 
 | Component | Supported appearance inputs |
 | --- | --- |
+| Buttons | Default, destructive, outline and ghost container, content, border and disabled colors |
 | Cards | Container, content, border, supporting-text and trailing-content colors |
 | List selection | Checked fill, checked glyph and unchecked outline colors shared by List, Grid and Select all |
 | Section cards and Settings | Container, content, border, divider and secondary-content colors; existing switch/slider colors |
